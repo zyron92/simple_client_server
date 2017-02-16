@@ -10,7 +10,7 @@ csapp module (csapp.c & csapp.h) is borrowed from the [page](http://csapp.cs.cmu
 A simple client and a server application (blocking I/O) which communicates with a custom protocol based on TCP/IP. 
 The server waits a connection trial from the client with port 12345, and the client will ask the server to conduct several jobs.
 
-Makefile will produce two executable programs (client and server). Client program will run several jobs automatically, while server program will wait commands from the client. Client program needs a file to be executed with, where this file will be sent to the server program via network. Client program will send firstly a hello command and then wait for a hello command from the server program. After that, client program will send the file to the server program (multiple data packets). Once sending is done, client will send a data store command in order for the server program to store all the received data packets in a file named server.out .
+Makefile will produce two executable programs (client and server). Client program will run several jobs automatically, while server program will run continuosly until a control-d is received, accepting many new clients requests one by one (wait commands from the clients). Client program needs a file to be executed with, where this file will be sent to the server program via network. Client program will send firstly a hello command and then wait for a hello command from the server program. After that, client program will send the file to the server program (multiple data packets). Once sending is done, client will send a data store command in order for the server program to store all the received data packets in a file named server.out .
 
 ##
 ###Header Format (total = 8 bytes)<br>
